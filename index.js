@@ -39,7 +39,7 @@ const rsBase64 = {
      * Utf8 decode request
      */
     utf8Decode: function (req) {
-        for (var e = "", t = 0, o = c1 = c2 = 0; t < req.length;) o = req.charCodeAt(t), 128 > o ? (e += String.fromCharCode(o), t++) : o > 191 && 224 > o ? (c2 = req.charCodeAt(t + 1), e += String.fromCharCode((31 & o) << 6 | 63 & c2), t += 2) : (c2 = req.charCodeAt(t + 1), c3 = req.charCodeAt(t + 2), e += String.fromCharCode((15 & o) << 12 | (63 & c2) << 6 | 63 & c3), t += 3);
+        for (var e = "", t = 0, o = 0, c1 = 0, c2 = 0; t < req.length;) o = req.charCodeAt(t), 128 > o ? (e += String.fromCharCode(o), t++) : o > 191 && 224 > o ? (c2 = req.charCodeAt(t + 1), e += String.fromCharCode((31 & o) << 6 | 63 & c2), t += 2) : (c2 = req.charCodeAt(t + 1), c3 = req.charCodeAt(t + 2), e += String.fromCharCode((15 & o) << 12 | (63 & c2) << 6 | 63 & c3), t += 3);
         return e
     }
 }
